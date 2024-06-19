@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WMS2024"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WMS2024 v0.2" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Text="Список товара на складе:" FontSize="24" FontWeight="Bold" Background="#FF9362FB" Foreground="White" Padding="20,7,0,0" UseLayoutRounding="True"/>
+        <StackPanel Grid.ColumnSpan="3" Grid.Row="3" Orientation="Horizontal" Background="#FF9362FB">
+            <TextBlock x:Name="TextBlock_Item_Name" Grid.Row="1" Text="Введите название товара:" VerticalAlignment="Center"  Margin="10 0 0 0"/>
+            <TextBox x:Name="TextBox_Item_Name" Margin="10 0 0 0" MinWidth="200" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TextBlock_Item_Qty" Margin="10 0 0 0" Text="Введите количество:" VerticalAlignment="Center"/>
+            <TextBox x:Name="TextBox_Item_Qty" Margin="10 0 0 0" MinWidth="200" VerticalAlignment="Center"/>
+            <Button x:Name="Button_Clear_All" Margin="10 0 0 0" Content="Очистить всё" VerticalAlignment="Center" Click="Button_Clear_All_Click"/>
+        </StackPanel>
+        <ListBox x:Name="Items_ListBox" Grid.ColumnSpan="3" Grid.Row="1" Background="#FFD8C5FF" SelectionChanged="Items_ListBox_SelectionChanged"/>
+        <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Orientation="Horizontal" Background="#FF9362FB">
+            <Button x:Name="ButtonItemIncome" Margin="10 10 0 10" Content="Добавить товар" Click="ButtonItemIncome_Click" MinWidth="200"/>
+            <Button x:Name="Button_Item_Outcome" Margin="10 10 0 10" Content="Выдать товар" MinWidth="200" Click="Button_Item_Outcome_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
