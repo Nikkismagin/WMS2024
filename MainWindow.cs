@@ -83,7 +83,11 @@ namespace WMS2024
             {
                 if (Item.GetArticleId == itemChoiseIndex)
                 {
-                    if (Item.GetQty - Convert.ToInt32(TextBox_Item_Qty.Text) >= 0)
+                    if (Convert.ToInt32(TextBox_Item_Qty.Text) < 0)
+                    {
+                        MessageBox.Show("Число должно быть положительным");
+                    }
+                    else if (Item.GetQty - Convert.ToInt32(TextBox_Item_Qty.Text) >= 0)
                     {
                         Item.GetQty -= Convert.ToInt32(TextBox_Item_Qty.Text);
                     }
